@@ -93,13 +93,21 @@ public class Salle extends Place {
             salle.displayArrival(canvas, paint, resources);
             salle.goToPoint(canvas, paint);
             this.goToPoint(canvas, paint);
-            this.pointToPoint(MainActivity.salles.get("101"), canvas, paint);
-            salle.pointToPoint(MainActivity.salles.get("101"), canvas, paint);
+
 
             if (this.nom == "105" || salle.nom == "105"){
                 MainActivity.salles.get("101").pointToPoint(MainActivity.salles.get("105"), canvas, paint);
+                if(this.nom !="101"&& salle.nom!="101") {
+                    MainActivity.salles.get("102").pointToPoint(MainActivity.salles.get("101"), canvas, paint);
+                }
 
+            }else{
+                if (this.nom == "101" || salle.nom == "101"){
+                    MainActivity.salles.get("102").pointToPoint(MainActivity.salles.get("101"), canvas, paint);
+
+                }  
             }
+
 
 
         }
